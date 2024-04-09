@@ -9,6 +9,7 @@ import FifthPage from "../screens/StartUp/FifthPage.StartUp";
 import SixthPage from "../screens/StartUp/SixthPage.StartUp";
 import SeventhPage from "../screens/StartUp/SeventhPage.StartUp";
 import SummaryPage from "../screens/StartUp/SummaryPage.StartUp";
+import SignInOptionsPage from "../screens/StartUp/SignInOptionPage.StartUp";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 export const StartUpStack = () => {
       return (
@@ -26,6 +27,7 @@ export const StartUpStack = () => {
                   <Stack.Screen name="SixthPage" component={SixthPage} />
                   <Stack.Screen name="SeventhPage" component={SeventhPage} />
                   <Stack.Screen name="SummaryPage" component={SummaryPage} />
+                  <Stack.Screen name="SignInOptionsPage" component={SignInOptionsPage} />
             </Stack.Navigator>
       );
 };

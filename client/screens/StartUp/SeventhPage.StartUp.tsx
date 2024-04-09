@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
 
 import goalImg from "../../assets/images/goal.png";
+import { theme } from "../../theme";
 const SeventhPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
 
@@ -62,17 +63,16 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             paddingTop: 80,
-            backgroundColor: "#f9f9f9",
+            backgroundColor: theme.colors.backgroundColor,
             paddingHorizontal: 20,
             paddingVertical: 40,
       },
       title: {
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: theme.text.header.fontSize,
             marginBottom: 50,
             width: 300,
             textAlign: "center",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       image: {
             width: 80,
@@ -87,54 +87,53 @@ const styles = StyleSheet.create({
             marginBottom: 40,
       },
       curretWeighText: {
-            fontSize: 18,
+            fontSize: theme.text.normal.fontSize,
             fontWeight: "100",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.secondary,
       },
       label: {
-            fontSize: 16,
+            fontSize: theme.text.small.fontSize,
             fontWeight: "200",
             marginBottom: 10,
             width: 300,
             textAlign: "center",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       input: {
             borderRadius: 8,
             height: 40,
-            borderColor: "gray",
+            borderColor: theme.colors.neutralColor,
             borderWidth: 1,
             padding: 10,
             marginBottom: 20,
             width: 300,
       },
       noteTitle: {
-            fontSize: 16,
-            fontWeight: "bold",
+            fontSize: theme.text.normal.fontSize,
             marginBottom: 10,
             width: 300,
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       noteText: {
-            fontSize: 12,
+            fontSize: theme.text.small.fontSize,
             width: 300,
-            fontFamily: "MontserratRegular",
+            fontFamily: theme.fonts.secondary,
       },
       buttonContainer: {
             width: 300,
             marginTop: 20,
       },
       button: {
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             borderRadius: 8,
             padding: 15,
             alignItems: "center",
             elevation: 5,
       },
       buttonText: {
-            fontSize: 16,
-            color: "white",
-            fontFamily: "LatoBold",
+            fontSize: theme.text.small.fontSize,
+            color: theme.colors.buttonTextColor,
+            fontFamily: theme.fonts.primary,
       },
 });
 

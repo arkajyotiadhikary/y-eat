@@ -8,6 +8,7 @@ import lightlyActiveImg from "../../assets/images/walk.png";
 import moderatelyActiveImg from "../../assets/images/bicycle.png";
 import veryActiveImg from "../../assets/images/weightlifter.png";
 import professionalAthleteImg from "../../assets/images/sportman.png";
+import { theme } from "../../theme";
 
 const FourthPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
@@ -87,15 +88,14 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
       },
       title: {
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: theme.text.header.fontSize,
             width: 300,
             textAlign: "center",
             marginBottom: 50,
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       card: {
             width: 300,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "white",
+            backgroundColor: theme.colors.backgroundColor,
             borderRadius: 8,
             marginBottom: 20,
             elevation: 5,
@@ -113,10 +113,9 @@ const styles = StyleSheet.create({
             justifyContent: "center",
       },
       cardTitle: {
-            fontSize: 16,
-            fontWeight: "bold",
+            fontSize: theme.text.normal.fontSize,
             marginBottom: 10,
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       image: {
             width: 50,
@@ -124,9 +123,9 @@ const styles = StyleSheet.create({
             resizeMode: "cover",
       },
       text: {
-            color: "#222",
-            fontSize: 12,
-            fontFamily: "MontserratRegular",
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
             paddingLeft: 20,
             paddingRight: 20,
             width: 200,

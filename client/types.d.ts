@@ -9,6 +9,7 @@ export type RootStackParamList = {
       SixthPage: undefined;
       SeventhPage: undefined;
       SummaryPage: undefined;
+      SignInOptionsPage: undefined;
 };
 export type RootStackNavigationProp = NativeStackScreenProps<
       RootStackParamList,
@@ -19,5 +20,6 @@ export type RootStackNavigationProp = NativeStackScreenProps<
       FifthPage,
       SixthPage,
       SeventhPage,
-      SummaryPage
+      SummaryPage,
+      SignInOptionsPage
 >;

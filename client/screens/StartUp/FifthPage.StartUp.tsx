@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { RootStackNavigationProp } from "../../types";
+import { theme } from "../../theme";
 
 const FifthPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
@@ -32,18 +33,17 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
       },
       title: {
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: theme.text.header.fontSize,
             marginBottom: 20,
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       text: {
-            color: "#222",
-            fontSize: 14,
-            fontFamily: "MontserratRegular",
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
             paddingLeft: 20,
             paddingRight: 20,
             width: 300,
@@ -56,17 +56,16 @@ const styles = StyleSheet.create({
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "white",
+            backgroundColor: theme.colors.backgroundColor,
             borderRadius: 8,
             marginBottom: 20,
             elevation: 5,
       },
 
       cardTitle: {
-            fontSize: 16,
-            fontWeight: "bold",
+            fontSize: theme.text.normal.fontSize,
             marginBottom: 10,
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.secondary,
       },
 });
 

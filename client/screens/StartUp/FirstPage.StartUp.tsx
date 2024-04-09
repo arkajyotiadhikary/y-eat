@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import CarouselCards from "../../components/Carousel/StartUpCarousel";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
+import { theme } from "../../theme";
 
 const FirstPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
@@ -20,7 +21,10 @@ const FirstPage = () => {
                   {/* already have an account */}
                   <Text style={styles.alreadyHaveAccount}>Already have an account?</Text>
                   {/* sign in */}
-                  <TouchableOpacity style={styles.signInBtn}>
+                  <TouchableOpacity
+                        style={styles.signInBtn}
+                        onPress={() => navigation.navigate("SignInOptionsPage")}
+                  >
                         <Text style={styles.signInBtnText}>Sign in</Text>
                   </TouchableOpacity>
             </View>
@@ -30,12 +34,12 @@ const FirstPage = () => {
 const styles = StyleSheet.create({
       container: {
             flex: 1,
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
             alignItems: "center",
             justifyContent: "center",
       },
       startBtn: {
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             padding: 10,
             borderRadius: 5,
             marginTop: 20,
@@ -45,14 +49,15 @@ const styles = StyleSheet.create({
             elevation: 5,
       },
       startBtnText: {
-            color: "#fff",
-            fontFamily: "LatoBold",
+            color: theme.colors.buttonTextColor,
+            fontFamily: theme.fonts.primary,
       },
       alreadyHaveAccount: {
             marginTop: 10,
             alignItems: "center",
             justifyContent: "center",
-            fontFamily: "LatoRegular",
+            fontWeight: "100",
+            fontFamily: theme.fonts.primary,
       },
       signInBtn: {
             marginTop: 10,
@@ -60,9 +65,9 @@ const styles = StyleSheet.create({
             justifyContent: "center",
       },
       signInBtnText: {
-            color: "#4CAF50",
-            fontFamily: "LatoBold",
-            fontSize: 16,
+            color: theme.colors.accentColor,
+            fontFamily: theme.fonts.primary,
+            fontSize: theme.text.small.fontSize,
       },
 });
 

@@ -5,6 +5,7 @@ import { RootStackNavigationProp } from "../../types";
 import egg from "../../assets/images/boiled-egg.png";
 import tea from "../../assets/images/tea.png";
 import wheat from "../../assets/images/wheat.png";
+import { theme } from "../../theme";
 
 const SecondPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
@@ -69,21 +70,20 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
       },
       title: {
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: theme.text.header.fontSize,
+            fontFamily: theme.fonts.primary,
             marginBottom: 50,
-            fontFamily: "LatoBold",
       },
       card: {
             width: 300,
-            height: 100,
+            height: 130,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "white",
+            backgroundColor: theme.colors.backgroundColor,
             borderRadius: 8,
             marginBottom: 20,
             elevation: 5,
@@ -93,20 +93,20 @@ const styles = StyleSheet.create({
             justifyContent: "center",
       },
       cardTitle: {
-            fontSize: 16,
-            fontWeight: "bold",
+            fontSize: theme.text.normal.fontSize,
+            fontFamily: theme.fonts.primary,
             marginBottom: 10,
-            fontFamily: "LatoBold",
       },
       image: {
             width: 50,
             height: 50,
+            marginEnd: 10,
             resizeMode: "cover",
       },
       text: {
-            color: "#222",
-            fontSize: 12,
-            fontFamily: "MontserratRegular",
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
             paddingLeft: 20,
             paddingRight: 20,
             width: 200,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
+import { theme } from "../../theme";
 // Define interface for FoodList
 interface FoodList {
       [key: string]: string[];
@@ -105,7 +106,13 @@ const SixthPage = () => {
                                                       ]}
                                                       onPress={() => handleFoodSelect(item)}
                                                 >
-                                                      <Text style={styles.listItemText}>
+                                                      <Text
+                                                            style={[
+                                                                  styles.listItemText,
+                                                                  selectedFoods.includes(item) &&
+                                                                        styles.selectedListItemText,
+                                                            ]}
+                                                      >
                                                             {item}
                                                       </Text>
                                                 </TouchableOpacity>
@@ -132,30 +139,28 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             paddingTop: 50,
-            backgroundColor: "#f9f9f9",
+            backgroundColor: theme.colors.backgroundColor,
             paddingHorizontal: 20,
             paddingVertical: 40,
       },
       title: {
-            fontSize: 18,
-            fontWeight: "bold",
+            fontSize: theme.text.normal.fontSize,
             marginBottom: 20,
             width: 300,
             textAlign: "center",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       card: {
-            backgroundColor: "white",
+            backgroundColor: theme.colors.backgroundColor,
             borderRadius: 8,
             margin: 20,
             padding: 15,
             elevation: 2,
       },
       cardTitle: {
-            fontSize: 14,
-            fontWeight: "bold",
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
             marginBottom: 10,
-            fontFamily: "LatoBold",
       },
       list: {
             flexDirection: "row",
@@ -163,27 +168,29 @@ const styles = StyleSheet.create({
       },
       listItem: {
             width: "100%",
-            height: 25,
+            height: 30,
             borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
             marginHorizontal: 10,
       },
       listItemText: {
-            fontSize: 12,
-            fontWeight: "bold",
-            fontFamily: "LatoBold",
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
       },
       selectedListItem: {
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
       },
+      selectedListItemText: {
+            color: theme.colors.buttonTextColor,
+      },
       submitButton: {
             width: 300,
             height: 50,
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
@@ -191,10 +198,9 @@ const styles = StyleSheet.create({
             elevation: 5,
       },
       submitText: {
-            fontSize: 16,
-            fontWeight: "bold",
-            color: "white",
-            fontFamily: "LatoBold",
+            fontSize: theme.text.small.fontSize,
+            color: theme.colors.buttonTextColor,
+            fontFamily: theme.fonts.primary,
       },
 });
 

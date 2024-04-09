@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import summaryImg from "../../assets/images/contract.png";
+import { theme } from "../../theme";
 const SummaryPage = () => {
       return (
             <View style={styles.container}>
@@ -24,10 +25,10 @@ const SummaryPage = () => {
                         <Text style={styles.boldText}>3000</Text>
                   </Text>
                   <View style={styles.macrosContainer}>
-                        <Text style={[styles.boldText, { marginBottom: 10 }]}>Macronutrients</Text>
+                        <Text style={[styles.macroText, { marginBottom: 10 }]}>Macronutrients</Text>
                         <Text style={styles.macroText}>Protein : 20g</Text>
-                        <Text>Carbohydrates : 50g</Text>
-                        <Text>Fat : 10g</Text>
+                        <Text style={styles.macroText}>Carbohydrates : 50g</Text>
+                        <Text style={styles.macroText}>Fat : 10g</Text>
                   </View>
                   <TouchableOpacity style={styles.createBtn}>
                         <Text style={styles.createBtnText}>Create plan</Text>
@@ -44,12 +45,11 @@ const styles = StyleSheet.create({
             alignItems: "center",
       },
       headerTitle: {
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: theme.text.header.fontSize,
             marginBottom: 50,
             width: 300,
             textAlign: "center",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       image: {
             width: 80,
@@ -57,27 +57,26 @@ const styles = StyleSheet.create({
             marginBottom: 50,
       },
       subHeader: {
-            fontSize: 14,
+            fontSize: theme.text.small.fontSize,
             marginBottom: 10,
             width: 300,
-            fontFamily: "MontserratRegular",
+            fontFamily: theme.fonts.secondary,
       },
       boldText: {
-            fontWeight: "bold",
-            fontFamily: "LatoBold",
+            fontFamily: theme.fonts.primary,
       },
       macrosContainer: {
             width: 300,
             marginBottom: 20,
       },
       macroText: {
-            fontSize: 14,
-            fontFamily: "MontserratRegular",
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
       },
       createBtn: {
             width: 300,
             height: 50,
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
@@ -85,10 +84,9 @@ const styles = StyleSheet.create({
             elevation: 5,
       },
       createBtnText: {
-            fontSize: 16,
-            fontWeight: "bold",
-            color: "white",
-            fontFamily: "LatoBold",
+            fontSize: theme.text.small.fontSize,
+            color: theme.colors.backgroundColor,
+            fontFamily: theme.fonts.primary,
       },
 });
 

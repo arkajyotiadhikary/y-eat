@@ -6,6 +6,7 @@ import boy from "../../assets/images/boy.png";
 import girl from "../../assets/images/girl.png";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
+import { theme } from "../../theme";
 
 const ThirdPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
@@ -103,10 +104,10 @@ const styles = StyleSheet.create({
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
       },
       nextBtn: {
-            backgroundColor: "#4CAF50",
+            backgroundColor: theme.colors.accentColor,
             padding: 10,
             borderRadius: 5,
             marginTop: 40,
@@ -116,15 +117,9 @@ const styles = StyleSheet.create({
             elevation: 5,
       },
       nextBtnText: {
-            color: "#fff",
-            fontSize: 16,
-            fontFamily: "LatoBold",
-      },
-      title: {
-            fontSize: 24,
-            fontWeight: "bold",
-            marginBottom: 50,
-            fontFamily: "LatoBold",
+            color: theme.colors.buttonTextColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.primary,
       },
       genderContainer: {
             flexDirection: "row",
@@ -132,12 +127,12 @@ const styles = StyleSheet.create({
             justifyContent: "center",
       },
       genderButton: {
-            backgroundColor: "#fff",
+            backgroundColor: theme.colors.backgroundColor,
             alignItems: "center",
             justifyContent: "center",
             width: 100,
             borderWidth: 1,
-            borderColor: "#ccc",
+            borderColor: theme.colors.neutralColor,
             borderRadius: 5,
             padding: 10,
             margin: 10,
@@ -149,17 +144,16 @@ const styles = StyleSheet.create({
             resizeMode: "cover",
       },
       genderText: {
-            fontSize: 16,
-            fontFamily: "LatoRegular",
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.primary,
       },
       selected: {
-            backgroundColor: "#ccc",
+            backgroundColor: theme.colors.accentColor,
       },
 
       inputLabel: {
-            fontSize: 16,
-            fontFamily: "LatoRegular",
-            marginEnd: 10,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.primary,
       },
       dateContainer: {
             marginTop: 20,
@@ -169,17 +163,17 @@ const styles = StyleSheet.create({
       },
       dateTextInput: {
             borderWidth: 1,
-            borderColor: "#ccc",
+            borderColor: theme.colors.neutralColor,
+            fontFamily: theme.fonts.primary,
             borderRadius: 5,
             padding: 10,
             margin: 10,
             width: 50,
             textAlign: "center",
-            fontFamily: "LatoRegular",
       },
       slash: {
-            fontSize: 16,
-            fontFamily: "LatoRegular",
+            fontSize: theme.text.normal.fontSize,
+            fontFamily: theme.fonts.primary,
       },
       heightContainer: {
             marginTop: 20,
@@ -189,13 +183,13 @@ const styles = StyleSheet.create({
       },
       heightTextInput: {
             borderWidth: 1,
-            borderColor: "#ccc",
+            borderColor: theme.colors.neutralColor,
             borderRadius: 5,
             padding: 10,
             margin: 10,
-            width: 100,
+            width: 110,
             textAlign: "center",
-            fontFamily: "LatoRegular",
+            fontFamily: theme.fonts.secondary,
       },
       weightContainer: {
             marginTop: 20,
@@ -205,13 +199,13 @@ const styles = StyleSheet.create({
       },
       weightTextInput: {
             borderWidth: 1,
-            borderColor: "#ccc",
+            borderColor: theme.colors.neutralColor,
             borderRadius: 5,
             padding: 10,
             margin: 10,
-            width: 100,
+            width: 110,
             textAlign: "center",
-            fontFamily: "LatoRegular",
+            fontFamily: theme.fonts.secondary,
       },
 });
 
