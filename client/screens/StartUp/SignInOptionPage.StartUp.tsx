@@ -6,10 +6,18 @@ import appleLogo from "../../assets/images/apple-black-logo.png";
 import emailLogo from "../../assets/images/email.png";
 
 import { theme } from "../../theme";
+import { Ionicons } from "@expo/vector-icons";
+
+import { useNavigation } from "@react-navigation/native";
 
 const SignInOptionsPage = () => {
+      const navigation = useNavigation();
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   {/* Google */}
                   <TouchableOpacity style={styles.btn}>
                         <Image style={styles.logo} source={googleLogo} />
@@ -40,6 +48,19 @@ const styles = StyleSheet.create({
             backgroundColor: theme.colors.backgroundColor,
             alignItems: "center",
             justifyContent: "center",
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       btn: {
             flexDirection: "row",

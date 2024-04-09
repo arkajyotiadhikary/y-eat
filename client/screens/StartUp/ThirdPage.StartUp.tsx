@@ -7,7 +7,7 @@ import girl from "../../assets/images/girl.png";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
-
+import { Ionicons } from "@expo/vector-icons";
 const ThirdPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
 
@@ -18,6 +18,10 @@ const ThirdPage = () => {
       };
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   {/* gender */}
                   <View style={styles.genderContainer}>
                         <TouchableOpacity
@@ -105,6 +109,19 @@ const styles = StyleSheet.create({
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: theme.colors.backgroundColor,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       nextBtn: {
             backgroundColor: theme.colors.accentColor,

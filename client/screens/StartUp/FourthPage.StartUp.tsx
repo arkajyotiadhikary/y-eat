@@ -9,11 +9,15 @@ import moderatelyActiveImg from "../../assets/images/bicycle.png";
 import veryActiveImg from "../../assets/images/weightlifter.png";
 import professionalAthleteImg from "../../assets/images/sportman.png";
 import { theme } from "../../theme";
-
+import { Ionicons } from "@expo/vector-icons";
 const FourthPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   <Text style={styles.title}>What is your physical activity level?</Text>
                   <View>
                         <TouchableOpacity
@@ -86,9 +90,23 @@ const FourthPage = () => {
 const styles = StyleSheet.create({
       container: {
             flex: 1,
+            paddingTop: 50,
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: theme.colors.backgroundColor,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       title: {
             fontSize: theme.text.header.fontSize,

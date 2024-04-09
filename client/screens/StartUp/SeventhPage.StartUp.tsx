@@ -5,6 +5,7 @@ import { RootStackNavigationProp } from "../../types";
 
 import goalImg from "../../assets/images/goal.png";
 import { theme } from "../../theme";
+import { Ionicons } from "@expo/vector-icons";
 const SeventhPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
 
@@ -14,6 +15,10 @@ const SeventhPage = () => {
 
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   <Text style={styles.title}>Set your Goal</Text>
                   <Image style={styles.image} source={goalImg} />
                   <View style={styles.currentWeightContainer}>
@@ -62,10 +67,23 @@ const styles = StyleSheet.create({
       container: {
             flex: 1,
             alignItems: "center",
-            paddingTop: 80,
+            paddingTop: 100,
             backgroundColor: theme.colors.backgroundColor,
             paddingHorizontal: 20,
             paddingVertical: 40,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       title: {
             fontSize: theme.text.header.fontSize,

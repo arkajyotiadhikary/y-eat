@@ -2,9 +2,16 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import summaryImg from "../../assets/images/contract.png";
 import { theme } from "../../theme";
+import { Ionicons } from "@expo/vector-icons";
+
 const SummaryPage = () => {
+      const navigation = useNavigation();
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   <Text style={styles.headerTitle}>Summary</Text>
                   {/* one image */}
                   <Image style={styles.image} source={summaryImg} />
@@ -43,6 +50,19 @@ const styles = StyleSheet.create({
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       headerTitle: {
             fontSize: theme.text.header.fontSize,

@@ -6,11 +6,17 @@ import egg from "../../assets/images/boiled-egg.png";
 import tea from "../../assets/images/tea.png";
 import wheat from "../../assets/images/wheat.png";
 import { theme } from "../../theme";
+import { Ionicons } from "@expo/vector-icons";
 
 const SecondPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
       return (
             <View style={styles.container}>
+                  {/* back btn */}
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   {/* Whats your goal */}
                   <Text style={styles.title}>What's your goal?</Text>
                   {/* three options */}
@@ -71,6 +77,19 @@ const styles = StyleSheet.create({
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: theme.colors.backgroundColor,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       title: {
             fontSize: theme.text.header.fontSize,

@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
+import { Ionicons } from "@expo/vector-icons";
 // Define interface for FoodList
 interface FoodList {
       [key: string]: string[];
@@ -83,6 +84,10 @@ const SixthPage = () => {
 
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   <Text style={styles.title}>
                         Which ingredient do you normally have or wish to include?
                   </Text>
@@ -138,10 +143,23 @@ const styles = StyleSheet.create({
       container: {
             flex: 1,
             alignItems: "center",
-            paddingTop: 50,
+            paddingTop: 100,
             backgroundColor: theme.colors.backgroundColor,
             paddingHorizontal: 20,
             paddingVertical: 40,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       title: {
             fontSize: theme.text.normal.fontSize,

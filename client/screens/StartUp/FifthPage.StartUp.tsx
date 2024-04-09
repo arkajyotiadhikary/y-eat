@@ -2,11 +2,15 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { RootStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
-
+import { Ionicons } from "@expo/vector-icons";
 const FifthPage = () => {
       const navigation = useNavigation<RootStackNavigationProp>();
       return (
             <View style={styles.container}>
+                  <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={18} color="black" />
+                        <Text style={styles.backText}>Back</Text>
+                  </TouchableOpacity>
                   <Text style={styles.title}>Do you do strength training?</Text>
                   <Text style={styles.text}>
                         Strength training helps build muscle and reduce risk of injury (like in
@@ -34,6 +38,19 @@ const styles = StyleSheet.create({
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: theme.colors.backgroundColor,
+      },
+      backBtn: {
+            position: "absolute",
+            flexDirection: "row",
+            alignItems: "center",
+            top: 50,
+            left: 20,
+      },
+      backText: {
+            color: theme.colors.textColor,
+            fontSize: theme.text.small.fontSize,
+            fontFamily: theme.fonts.secondary,
+            marginLeft: 5,
       },
       title: {
             fontSize: theme.text.header.fontSize,
