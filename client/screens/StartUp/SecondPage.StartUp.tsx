@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 // Images
 import egg from "../../assets/images/boiled-egg.png";
 import tea from "../../assets/images/tea.png";
@@ -9,7 +9,7 @@ import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 
 const SecondPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
       return (
             <View style={styles.container}>
                   {/* back btn */}

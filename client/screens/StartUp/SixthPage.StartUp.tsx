@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 // Define interface for FoodList
@@ -72,7 +72,7 @@ const foodList: FoodList = {
 };
 
 const SixthPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
       const [selectedFoods, setSelectedFoods] = useState<string[]>([]);
       const handleFoodSelect = (food: string) => {
             if (selectedFoods.includes(food)) {

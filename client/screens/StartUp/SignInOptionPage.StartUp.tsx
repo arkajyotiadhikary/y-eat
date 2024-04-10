@@ -9,9 +9,10 @@ import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
+import { AppStackNavigationProp } from "../../types";
 
 const SignInOptionsPage = () => {
-      const navigation = useNavigation();
+      const navigation = useNavigation<AppStackNavigationProp>();
       return (
             <View style={styles.container}>
                   <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>

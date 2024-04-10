@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 const FifthPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
       return (
             <View style={styles.container}>
                   <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>

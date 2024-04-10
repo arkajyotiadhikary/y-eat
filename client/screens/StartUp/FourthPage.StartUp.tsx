@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 
 // Images
 import sedentaryImg from "../../assets/images/sedentary.png";
@@ -11,7 +11,7 @@ import professionalAthleteImg from "../../assets/images/sportman.png";
 import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 const FourthPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
       return (
             <View style={styles.container}>
                   <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>

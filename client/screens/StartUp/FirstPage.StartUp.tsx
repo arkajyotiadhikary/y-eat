@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import CarouselCards from "../../components/Carousel/StartUpCarousel";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
 
 const FirstPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
       return (
             <View style={styles.container}>
                   {/* Quate carousel */}

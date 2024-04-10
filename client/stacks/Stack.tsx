@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types";
+import { AppStackParamList } from "../types";
 
 import FirstPage from "../screens/StartUp/FirstPage.StartUp";
 import SecondPage from "../screens/StartUp/SecondPage.StartUp";
@@ -10,7 +10,10 @@ import SixthPage from "../screens/StartUp/SixthPage.StartUp";
 import SeventhPage from "../screens/StartUp/SeventhPage.StartUp";
 import SummaryPage from "../screens/StartUp/SummaryPage.StartUp";
 import SignInOptionsPage from "../screens/StartUp/SignInOptionPage.StartUp";
-const Stack = createNativeStackNavigator<RootStackParamList>();
+import Welcome from "../screens/Home/Welcome/Welcome.Home";
+
+const Stack = createNativeStackNavigator<AppStackParamList>();
+
 export const StartUpStack = () => {
       return (
             <Stack.Navigator
@@ -28,6 +31,13 @@ export const StartUpStack = () => {
                   <Stack.Screen name="SeventhPage" component={SeventhPage} />
                   <Stack.Screen name="SummaryPage" component={SummaryPage} />
                   <Stack.Screen name="SignInOptionsPage" component={SignInOptionsPage} />
+            </Stack.Navigator>
+      );
+};
+export const AppStack = () => {
+      return (
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                  <Stack.Screen name="Welcome" component={Welcome} />
             </Stack.Navigator>
       );
 };

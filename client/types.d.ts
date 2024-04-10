@@ -1,6 +1,6 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export type RootStackParamList = {
+export type AppStackParamList = {
       FirstPage: undefined;
       SecondPage: undefined;
       ThirdPage: undefined;
@@ -10,16 +10,6 @@ export type RootStackParamList = {
       SeventhPage: undefined;
       SummaryPage: undefined;
       SignInOptionsPage: undefined;
+      Welcome: undefined;
 };
-export type RootStackNavigationProp = NativeStackScreenProps<
-      RootStackParamList,
-      FirstPage,
-      SecondPage,
-      ThirdPage,
-      FourthPage,
-      FifthPage,
-      SixthPage,
-      SeventhPage,
-      SummaryPage,
-      SignInOptionsPage
->;
+export type AppStackNavigationProp = NativeStackScreenProps<AppStackParamList>;

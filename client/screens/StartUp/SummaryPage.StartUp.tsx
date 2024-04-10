@@ -37,7 +37,10 @@ const SummaryPage = () => {
                         <Text style={styles.macroText}>Carbohydrates : 50g</Text>
                         <Text style={styles.macroText}>Fat : 10g</Text>
                   </View>
-                  <TouchableOpacity style={styles.createBtn}>
+                  <TouchableOpacity
+                        style={styles.createBtn}
+                        onPress={() => navigation.navigate("SignInOptionsPage")}
+                  >
                         <Text style={styles.createBtnText}>Create plan</Text>
                   </TouchableOpacity>
                   {/* button create plan */}

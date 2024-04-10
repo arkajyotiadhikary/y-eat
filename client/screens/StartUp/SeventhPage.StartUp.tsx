@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 
 import goalImg from "../../assets/images/goal.png";
 import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 const SeventhPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
 
       const [currentWeight, setCurrentWeight] = useState("");
       const [goalWeight, setGoalWeight] = useState("");

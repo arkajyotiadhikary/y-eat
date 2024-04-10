@@ -5,11 +5,11 @@ import { useState } from "react";
 import boy from "../../assets/images/boy.png";
 import girl from "../../assets/images/girl.png";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackNavigationProp } from "../../types";
+import { AppStackNavigationProp } from "../../types";
 import { theme } from "../../theme";
 import { Ionicons } from "@expo/vector-icons";
 const ThirdPage = () => {
-      const navigation = useNavigation<RootStackNavigationProp>();
+      const navigation = useNavigation<AppStackNavigationProp>();
 
       const [selectedGender, setSelectedGender] = useState("");
 
