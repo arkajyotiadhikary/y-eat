@@ -80,9 +80,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        paddingTop: 100,
+        paddingTop: theme.dimensions.height * 0.1,
         backgroundColor: theme.colors.backgroundColor,
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.paddingHorizontal,
         paddingVertical: 40,
     },
     backBtn: {
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: theme.text.header.fontSize,
-        marginBottom: 50,
+        marginBottom: 40,
         width: 300,
         textAlign: "center",
         fontFamily: theme.fonts.primary,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     image: {
         width: 80,
         height: 80,
-        marginBottom: 50,
+        marginBottom: 40,
     },
     currentWeightContainer: {
         width: 300,

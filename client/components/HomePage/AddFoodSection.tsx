@@ -38,12 +38,16 @@ const AddFoodSection: React.FC<AddFoodSectionProps> = ({
                     foodList.map((food, index) => (
                         <View key={index} style={styles.foodItem}>
                             {/* image of the food */}
-                            <Image
-                                source={food?.image}
-                                style={styles.foodImage}
-                            />
-                            {/* name of the food */}
-                            <Text style={styles.foodName}>{food?.name}</Text>
+                            <View style={styles.foodImageContainer}>
+                                <Image
+                                    source={food?.image}
+                                    style={styles.foodImage}
+                                />
+                                {/* name of the food */}
+                                <Text style={styles.foodName}>
+                                    {food?.name}
+                                </Text>
+                            </View>
                             {/* quantity */}
                             <Text style={styles.foodQuantity}>
                                 {food?.quantity}
@@ -97,6 +101,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         marginVertical: 10,
     },
+    foodImageContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
     foodImage: {
         width: 50,
         height: 50,
@@ -104,10 +112,11 @@ const styles = StyleSheet.create({
     foodName: {
         fontSize: theme.text.small.fontSize,
         fontFamily: theme.fonts.secondary,
+        marginLeft: 10,
     },
     foodQuantity: {
         fontSize: theme.text.small.fontSize,
-        fontFamily: theme.fonts.secondary,
+        fontFamily: theme.fonts.primary,
     },
     btnContainer: {
         width: theme.dimensions.width,

@@ -19,6 +19,8 @@ export const theme = {
         height: Dimensions.get("window").height,
     },
     borderRadius: 5,
+    paddingTop: 40,
+    paddingHorizontal: 20,
     fonts: {
         primary: "LatoBold",
         secondary: "MontserratRegular",

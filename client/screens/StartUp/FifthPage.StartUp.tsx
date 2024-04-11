@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        paddingHorizontal: theme.paddingHorizontal,
         backgroundColor: theme.colors.backgroundColor,
     },
     backBtn: {
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
         marginLeft: 5,
     },
     title: {
+        textAlign: "center",
         fontSize: theme.text.header.fontSize,
         marginBottom: 20,
         fontFamily: theme.fonts.primary,

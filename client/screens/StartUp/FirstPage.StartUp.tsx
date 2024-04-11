@@ -36,6 +36,7 @@ const FirstPage = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingHorizontal: theme.paddingHorizontal,
         backgroundColor: theme.colors.backgroundColor,
         alignItems: "center",
         justifyContent: "center",

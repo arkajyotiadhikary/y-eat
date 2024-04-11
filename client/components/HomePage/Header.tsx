@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        width: "100%",
-        padding: 10,
+        width: theme.dimensions.width,
+        paddingHorizontal: theme.paddingHorizontal,
     },
     headerDay: {
         flexDirection: "row",
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 20,
         fontWeight: "bold",
-        marginLeft: 10,
-        marginRight: 10,
+        marginHorizontal: 10,
     },
 });
 

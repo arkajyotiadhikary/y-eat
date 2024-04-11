@@ -78,8 +78,8 @@ export const AppTabs = () => {
             })}
         >
             <Tabs.Screen name="Home" component={HomePage} />
-            <Tabs.Screen name="Recipes" component={Recipes} />
             <Tabs.Screen name="RecipeSearch" component={SearchRecipe} />
+            <Tabs.Screen name="Recipes" component={Recipes} />
         </Tabs.Navigator>
     );
 };

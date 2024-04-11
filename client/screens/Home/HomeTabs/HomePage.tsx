@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: theme.colors.backgroundColor,
-        paddingTop: 40,
+        paddingTop: theme.paddingTop,
     },
 });
 

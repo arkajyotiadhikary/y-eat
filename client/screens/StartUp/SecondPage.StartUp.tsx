@@ -77,6 +77,7 @@ const SecondPage = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingHorizontal: theme.paddingHorizontal,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: theme.colors.backgroundColor,

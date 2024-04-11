@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        paddingHorizontal: theme.paddingHorizontal,
     },
     backBtn: {
         position: "absolute",
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: theme.text.header.fontSize,
-        marginBottom: 50,
+        marginBottom: 40,
         width: 300,
         textAlign: "center",
         fontFamily: theme.fonts.primary,

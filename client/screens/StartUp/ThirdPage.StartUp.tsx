@@ -57,28 +57,30 @@ const ThirdPage = () => {
             </View>
             <Text style={styles.inputLabel}> Please select a gender</Text>
             {/* date of birth */}
-            <View style={styles.dateContainer}>
+            <View style={styles.date}>
                 <Text style={styles.inputLabel}>Date of birth</Text>
-                <TextInput
-                    style={styles.dateTextInput}
-                    placeholder="DD"
-                    keyboardType="numeric"
-                    maxLength={2}
-                />
-                <Text style={styles.slash}>/</Text>
-                <TextInput
-                    style={styles.dateTextInput}
-                    placeholder="MM"
-                    keyboardType="numeric"
-                    maxLength={2}
-                />
-                <Text style={styles.slash}>/</Text>
-                <TextInput
-                    style={[styles.dateTextInput, { width: 80 }]}
-                    placeholder="YYYY"
-                    keyboardType="numeric"
-                    maxLength={4}
-                />
+                <View style={styles.dateContainer}>
+                    <TextInput
+                        style={styles.dateTextInput}
+                        placeholder="DD"
+                        keyboardType="numeric"
+                        maxLength={2}
+                    />
+                    <Text style={styles.slash}>/</Text>
+                    <TextInput
+                        style={styles.dateTextInput}
+                        placeholder="MM"
+                        keyboardType="numeric"
+                        maxLength={2}
+                    />
+                    <Text style={styles.slash}>/</Text>
+                    <TextInput
+                        style={[styles.dateTextInput, { width: 80 }]}
+                        placeholder="YYYY"
+                        keyboardType="numeric"
+                        maxLength={4}
+                    />
+                </View>
             </View>
 
             {/* height */}
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
+        paddingHorizontal: theme.paddingHorizontal,
         justifyContent: "center",
         backgroundColor: theme.colors.backgroundColor,
     },
@@ -182,8 +185,12 @@ const styles = StyleSheet.create({
         fontSize: theme.text.small.fontSize,
         fontFamily: theme.fonts.primary,
     },
+    date: {
+        marginTop: 40,
+        justifyContent: "center",
+        alignItems: "center",
+    },
     dateContainer: {
-        marginTop: 20,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",

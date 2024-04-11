@@ -108,7 +108,8 @@ const FourthPage = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 50,
+        paddingTop: theme.dimensions.height * 0.1,
+        paddingHorizontal: theme.paddingHorizontal,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: theme.colors.backgroundColor,
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
         fontSize: theme.text.header.fontSize,
         width: 300,
         textAlign: "center",
-        marginBottom: 50,
+        marginBottom: 20,
         fontFamily: theme.fonts.primary,
     },
     card: {

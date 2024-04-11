@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.backgroundColor,
+        paddingHorizontal: theme.paddingHorizontal,
         alignItems: "center",
         justifyContent: "center",
     },

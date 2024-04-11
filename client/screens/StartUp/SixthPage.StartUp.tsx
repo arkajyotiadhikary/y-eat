@@ -152,9 +152,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        paddingTop: 100,
+        paddingTop: theme.dimensions.height * 0.15,
         backgroundColor: theme.colors.backgroundColor,
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.paddingHorizontal,
         paddingVertical: 40,
     },
     backBtn: {
