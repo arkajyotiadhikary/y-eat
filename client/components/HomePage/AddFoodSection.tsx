@@ -8,7 +8,8 @@ import {
     ImageSourcePropType,
 } from "react-native";
 import { theme } from "../../theme";
-
+import BottomSheetContext from "../../contexts/BottomSheetContext";
+import { useBottomSheetContext } from "../../contexts/BottomSheetContext";
 interface FoodItem {
     image: ImageSourcePropType;
     name: string;
@@ -22,6 +23,7 @@ const AddFoodSection: React.FC<AddFoodSectionProps> = ({
     foodSectionTitle,
     foodList,
 }) => {
+    const { setIsOpen } = useBottomSheetContext();
     return (
         <View style={styles.container}>
             <Text style={styles.headerTitle}>{foodSectionTitle}</Text>
@@ -57,7 +59,10 @@ const AddFoodSection: React.FC<AddFoodSectionProps> = ({
             </View>
             <View style={styles.btnContainer}>
                 {/* add button */}
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity
+                    style={styles.btn}
+                    onPress={() => setIsOpen(true)}
+                >
                     <Text style={styles.btnText}>Log Food</Text>
                 </TouchableOpacity>
                 {/* build meal */}

@@ -5,6 +5,8 @@ import Router from "./routes/Router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 export default function App() {
     const [fontsLoaded] = useFonts({
         MontserratRegular: Montserrat_400Regular,
@@ -16,11 +18,11 @@ export default function App() {
         return null;
     }
     return (
-        <View style={styles.container}>
+        <GestureHandlerRootView style={styles.container}>
             <Provider store={store}>
                 <Router />
             </Provider>
-        </View>
+        </GestureHandlerRootView>
     );
 }
 
