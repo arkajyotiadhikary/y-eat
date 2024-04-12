@@ -17,6 +17,7 @@ import HomePage from "../screens/Home/HomeTabs/HomePage";
 import Recipes from "../screens/Home/HomeTabs/RecipesPage";
 import SearchRecipe from "../screens/Home/HomeTabs/SearchRecipePage";
 import { theme } from "../theme";
+import { BottomSheetProvider } from "../contexts/BottomSheetContext";
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
 const Tabs = createBottomTabNavigator<AppStackParamList>();
@@ -57,29 +58,33 @@ export const AppStack = () => {
 
 export const AppTabs = () => {
     return (
-        <Tabs.Navigator
-            screenOptions={({ route }) => ({
-                headerShown: false,
-                tabBarShowLabel: false,
+        <BottomSheetProvider>
+            <Tabs.Navigator
+                screenOptions={({ route }) => ({
+                    headerShown: false,
+                    tabBarShowLabel: false,
 
-                tabBarIcon: ({ focused, color, size }) => {
-                    let iconName: keyof typeof Entypo.glyphMap = "note";
-                    if (route.name === "Home") {
-                        iconName = "home";
-                    } else if (route.name === "Recipes") {
-                        iconName = "list";
-                    } else if (route.name === "RecipeSearch") {
-                        iconName = "magnifying-glass";
-                    }
-                    return <Entypo name={iconName} size={24} color={color} />;
-                },
-                tabBarActiveTintColor: activeTabColor,
-                tabBarInactiveTintColor: inactiveTabColor,
-            })}
-        >
-            <Tabs.Screen name="Home" component={HomePage} />
-            <Tabs.Screen name="RecipeSearch" component={SearchRecipe} />
-            <Tabs.Screen name="Recipes" component={Recipes} />
-        </Tabs.Navigator>
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName: keyof typeof Entypo.glyphMap = "note";
+                        if (route.name === "Home") {
+                            iconName = "home";
+                        } else if (route.name === "Recipes") {
+                            iconName = "list";
+                        } else if (route.name === "RecipeSearch") {
+                            iconName = "magnifying-glass";
+                        }
+                        return (
+                            <Entypo name={iconName} size={24} color={color} />
+                        );
+                    },
+                    tabBarActiveTintColor: activeTabColor,
+                    tabBarInactiveTintColor: inactiveTabColor,
+                })}
+            >
+                <Tabs.Screen name="Home" component={HomePage} />
+                <Tabs.Screen name="RecipeSearch" component={SearchRecipe} />
+                <Tabs.Screen name="Recipes" component={Recipes} />
+            </Tabs.Navigator>
+        </BottomSheetProvider>
     );
 };
